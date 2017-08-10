@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlayPauseBug" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DxE-ND-TFS">
+                                <rect key="frame" x="20" y="20" width="1864" height="426"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaG-8C-raz" customClass="PlayerView" customModule="PlayPauseBug" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="454" height="246"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="VaG-8C-raz" secondAttribute="height" multiplier="16:9" constant="16" id="21y-ht-Col"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="52w-uR-axz">
+                                        <rect key="frame" x="454" y="0.0" width="1410" height="426"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-gT-xGE">
+                                                <rect key="frame" x="463" y="0.0" width="484" height="86"/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="Play Video in Fullscreen"/>
+                                                <connections>
+                                                    <action selector="onPlayVideo:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ZBN-bT-eWf"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="1410" translatesAutoresizingMaskIntoConstraints="NO" id="IsI-7M-aeb">
+                                                <rect key="frame" x="0.0" y="118" width="1410" height="230"/>
+                                                <mutableString key="text">1. Press ▶︎ || button on  remote  control to Play/Pause the player in compact mode
+2. Press "Play Video in Fullscreen" button. Then press "Menu" on remote control to leave fullscreen mode.
+3. Press ▶︎ || key on  remote. After putting the player to play the UIViewController instance doesn't receive any UIPress events</mutableString>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model: A1625 (32 GB) | tvOS: 10.2.2 (14W756)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hd-TK-Bhr">
+                                                <rect key="frame" x="310" y="380" width="790" height="46"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VaG-8C-raz" firstAttribute="width" secondItem="DxE-ND-TFS" secondAttribute="width" multiplier="1:5" constant="81.333333333333371" id="VD0-Qa-nyd"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtR-Jk-CzE">
+                                <rect key="frame" x="240" y="462" width="1440" height="578"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DxE-ND-TFS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="0Zy-Yv-bJt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="DxE-ND-TFS" secondAttribute="leading" id="Hsz-GB-wGw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DxE-ND-TFS" secondAttribute="trailing" constant="16" id="RRf-PK-loe"/>
+                            <constraint firstItem="HtR-Jk-CzE" firstAttribute="top" secondItem="DxE-ND-TFS" secondAttribute="bottom" constant="16" id="eJb-Dh-Twt"/>
+                            <constraint firstItem="HtR-Jk-CzE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jbB-bu-xfb"/>
+                            <constraint firstItem="HtR-Jk-CzE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3:4" id="laT-b4-X2r"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HtR-Jk-CzE" secondAttribute="bottom" constant="40" id="ycp-Wx-kgm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputTextView" destination="HtR-Jk-CzE" id="t1x-25-BpR"/>
+                        <outlet property="playerView" destination="VaG-8C-raz" id="vyY-g8-vEs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="-49"/>
+        </scene>
+    </scenes>
+</document>
